@@ -7,7 +7,7 @@ def get_days_from_date(date_string):
         difference = now - given_date
         return difference.days
     except ValueError:
-        print("Nice try, please enter date in YYYY-MM-DD: ")
+        print("Nice try, please enter date in YYYY-MM-DD.")
 
 def main():
     date_string = input("Enter your date in YYYY-MM-DD format: ")
@@ -16,4 +16,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
