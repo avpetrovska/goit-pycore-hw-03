@@ -1,14 +1,13 @@
 import re
 
-def normalize_phone(phone_number : str) -> str:
-    phone = re.sub(r"[^\d+]", "", phone_number)
-    if phone.startswith("+380"):
-        return phone
-    elif phone.startswith("380"):
+def normalize_phone(phone_number: str) -> str:
+    phone = re.sub(r"\D", "", phone_number)
+
+    if phone.startswith("380"):
         return "+" + phone
-    elif phone.startswith("0"):
+    if phone.startswith("0"):
         return "+38" + phone
-    return phone
+    return "+38" + phone
 
 def main():
     raw_numbers = [
